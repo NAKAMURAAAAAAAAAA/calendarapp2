@@ -5,16 +5,47 @@
 //  Created by Kan Nakamura on 2019/01/27.
 //  Copyright © 2019 Kan Nakamura. All rights reserved.
 //
-
 import UIKit
+import FSCalendar
+import CalculateCalendarLogic
+import RealmSwift
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance  {
+    
+    @IBOutlet weak var labelDate: UILabel!
+    @IBOutlet weak var labelEvent: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let tmpDate = Calendar(identifier: .gregorian)
+        let year = tmpDate.component(.year, from: date)
+        let month = tmpDate.component(.month, from: date)
+        let day = tmpDate.component(.day, from: date)
+        //labelに日程表示
+        let da = "\(year)/\(month)/\(day)"
+        labelDate.text = da
+        
+        //スケジュール取得
+        let realm = try! Realm()
+        var result = realm.objects(Event.self)
+        //ここでString型のdateと一致させている。
+        result = result.filter("date = '\(da)'")
+        print("hehehe")
+        for ev in result {
+            if ev.date == da {
+                labelEvent.text = ev.event
+            }
+        }
+        
     }
 
-
 }
-
