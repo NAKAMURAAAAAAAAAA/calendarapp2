@@ -15,11 +15,13 @@ class EventViewController: UIViewController {
     @IBOutlet weak var eventText: UITextView!
     @IBOutlet weak var y: UIDatePicker!
     @IBOutlet weak var y_text: UILabel!
+    @IBOutlet weak var eventtext: UILabel!
     @IBAction func Add(_ sender: Any) {
         //UIDatePickerからDateを取得する
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         y_text.text = formatter.string(from: y.date)
+        eventtext.text = eventText.text
         
         //データ書き込み
         print("データ書き込み開始")

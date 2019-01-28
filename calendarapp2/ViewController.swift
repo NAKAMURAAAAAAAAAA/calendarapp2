@@ -36,10 +36,10 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         //スケジュール取得
         let realm = try! Realm()
-        var result = realm.objects(Event.self)
+        var result = realm.objects(Event.self).filter("date == '\(da)'")
         //ここでString型のdateと一致させている。
-        result = result.filter("date = '\(da)'")
-        print("hehehe")
+       // result = result.filter("date == '\(da)'")
+        print(result)
         for ev in result {
             if ev.date == da {
                 labelEvent.text = ev.event

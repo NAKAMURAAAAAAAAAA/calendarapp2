@@ -78,17 +78,20 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vja-YK-9MN">
-                                <rect key="frame" x="164" y="528" width="46" height="30"/>
+                                <rect key="frame" x="172" y="558" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="追加"/>
                                 <connections>
                                     <action selector="Add:" destination="3cP-Ca-YqP" eventType="touchUpInside" id="hcR-YF-tXN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm8-fP-vsH">
-                                <rect key="frame" x="164" y="588" width="46" height="30"/>
+                                <rect key="frame" x="172" y="588" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="jSt-Zw-mL7"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mn3-th-vwF">
                                 <rect key="frame" x="0.0" y="308" width="375" height="162"/>
@@ -97,8 +100,15 @@
                                     <!--2019-01-27 02:51:12 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4t-Jf-trB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日程が書きこまれるよ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4t-Jf-trB">
                                 <rect key="frame" x="33" y="491" width="326" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="予定が書きこまれるよ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-Hq-m2h">
+                                <rect key="frame" x="33" y="520" width="326" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -110,6 +120,7 @@
                     </view>
                     <connections>
                         <outlet property="eventText" destination="lpu-es-gV9" id="d7B-cY-Hxy"/>
+                        <outlet property="eventtext" destination="3J3-Hq-m2h" id="qY8-HT-tFj"/>
                         <outlet property="y" destination="Mn3-th-vwF" id="tzc-Oo-ohR"/>
                         <outlet property="y_text" destination="g4t-Jf-trB" id="tF8-Pi-UGr"/>
                     </connections>
