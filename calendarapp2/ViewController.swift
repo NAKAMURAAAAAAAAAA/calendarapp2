@@ -26,20 +26,25 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let tmpDate = Calendar(identifier: .gregorian)
+        /*let tmpDate = Calendar(identifier: .gregorian)
         let year = tmpDate.component(.year, from: date)
         let month = tmpDate.component(.month, from: date)
-        let day = tmpDate.component(.day, from: date)
+         let day = tmpDate.component(.day, from: date)*/
         //labelに日程表示
-        let da = "\(year)/\(month)/\(day)"
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let da = formatter.string(from: date)
         labelDate.text = da
         
         //スケジュール取得
         let realm = try! Realm()
-        var result = realm.objects(Event.self).filter("date == '\(da)'")
+        let result = realm.objects(Event.self).filter("date = '\(da)'")
         //ここでString型のdateと一致させている。
-       // result = result.filter("date == '\(da)'")
+        
         print(result)
+        
+        labelEvent.text = "イベントはありません"
         for ev in result {
             if ev.date == da {
                 labelEvent.text = ev.event

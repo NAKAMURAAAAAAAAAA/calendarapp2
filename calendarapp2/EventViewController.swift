@@ -26,7 +26,7 @@ class EventViewController: UIViewController {
         //データ書き込み
         print("データ書き込み開始")
         let realm = try! Realm()
-        try! realm.write {
+        try! realm.write{
             //日付表示の内容とスケジュール入力の内容が書き込まれる。
             let Events = [Event(value: ["date": y_text.text, "event": eventText.text])]
             realm.add(Events)
