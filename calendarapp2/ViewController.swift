@@ -12,6 +12,7 @@ import RealmSwift
 
 class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance  {
     
+    @IBOutlet weak var cupofbeer: UILabel!
     @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var labelEvent: UILabel!
     override func viewDidLoad() {
@@ -48,9 +49,10 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         for ev in result {
             if ev.date == da {
                 labelEvent.text = ev.event
+                cupofbeer.text = "\(ev.beer)"
             }
         }
         
     }
-
+    
 }

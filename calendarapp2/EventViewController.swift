@@ -12,6 +12,7 @@ import RealmSwift
 
 class EventViewController: UIViewController {
 
+    @IBOutlet weak var CupOfBeer: UITextField!
     @IBOutlet weak var eventText: UITextView!
     @IBOutlet weak var y: UIDatePicker!
     @IBOutlet weak var y_text: UILabel!
@@ -23,12 +24,16 @@ class EventViewController: UIViewController {
         y_text.text = formatter.string(from: y.date)
         eventtext.text = eventText.text
         
+        //データ型の変換
+        let beernumber = CupOfBeer.text
+        let beernum = Int(beernumber!)!
+
         //データ書き込み
         print("データ書き込み開始")
         let realm = try! Realm()
         try! realm.write{
             //日付表示の内容とスケジュール入力の内容が書き込まれる。
-            let Events = [Event(value: ["date": y_text.text, "event": eventText.text])]
+            let Events = [Event(value: ["date": y_text.text, "event": eventText.text, "beer": beernum])]
             realm.add(Events)
             print("データ書き込み中")
         }
