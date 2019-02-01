@@ -14,6 +14,7 @@ class Event: Object {
     @objc dynamic var event: String = ""
     @objc dynamic var beer: Int = 0
     @objc dynamic var highball: Int = 0
+    @objc dynamic var hungover: Bool = false
     
     
 }

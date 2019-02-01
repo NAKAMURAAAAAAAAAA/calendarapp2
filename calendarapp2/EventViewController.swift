@@ -12,11 +12,21 @@ import RealmSwift
 
 class EventViewController: UIViewController {
 
+   
     @IBOutlet weak var CupOfBeer: UITextField!
     @IBOutlet weak var eventText: UITextView!
     @IBOutlet weak var y: UIDatePicker!
     @IBOutlet weak var y_text: UILabel!
     @IBOutlet weak var eventtext: UILabel!
+    var whichisswitch = false
+    @IBAction func HungoverSwitch(_ sender: UISwitch) {
+        if sender.isOn == true {
+            whichisswitch = true
+            print(sender.isOn)    
+        } else {
+            whichisswitch = false
+        }
+    }
     @IBAction func Add(_ sender: Any) {
         //UIDatePickerからDateを取得する
         let formatter = DateFormatter()
@@ -33,7 +43,7 @@ class EventViewController: UIViewController {
         let realm = try! Realm()
         try! realm.write{
             //日付表示の内容とスケジュール入力の内容が書き込まれる。
-            let Events = [Event(value: ["date": y_text.text, "event": eventText.text, "beer": beernum])]
+            let Events = [Event(value: ["date": y_text.text, "event": eventText.text, "beer": beernum, "hungover": whichisswitch])]
             realm.add(Events)
             print("データ書き込み中")
         }

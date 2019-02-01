@@ -15,6 +15,7 @@
 		FA9AA7AD21FD44CE00648FE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9AA7AB21FD44CE00648FE2 /* LaunchScreen.storyboard */; };
 		FA9AA7B521FD4B8100648FE2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AA7B421FD4B8100648FE2 /* Event.swift */; };
 		FA9AA7B721FD4F0F00648FE2 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9AA7B621FD4F0F00648FE2 /* EventViewController.swift */; };
+		FAE4D67C220468D000633220 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4D67B220468D000633220 /* StatusViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FA9AA7AE21FD44CE00648FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA9AA7B421FD4B8100648FE2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FA9AA7B621FD4F0F00648FE2 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		FAE4D67B220468D000633220 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				FA9AA7A221FD44CC00648FE2 /* AppDelegate.swift */,
 				FA9AA7A421FD44CC00648FE2 /* ViewController.swift */,
 				FA9AA7A621FD44CC00648FE2 /* Main.storyboard */,
+				FAE4D67B220468D000633220 /* StatusViewController.swift */,
 				FA9AA7B621FD4F0F00648FE2 /* EventViewController.swift */,
 				FA9AA7B421FD4B8100648FE2 /* Event.swift */,
 				FA9AA7A921FD44CE00648FE2 /* Assets.xcassets */,
@@ -224,6 +227,7 @@
 				FA9AA7B721FD4F0F00648FE2 /* EventViewController.swift in Sources */,
 				FA9AA7B521FD4B8100648FE2 /* Event.swift in Sources */,
 				FA9AA7A321FD44CC00648FE2 /* AppDelegate.swift in Sources */,
+				FAE4D67C220468D000633220 /* StatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

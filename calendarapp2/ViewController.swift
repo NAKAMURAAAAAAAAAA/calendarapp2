@@ -12,6 +12,7 @@ import RealmSwift
 
 class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance  {
     
+    @IBOutlet weak var whichishungover: UILabel!
     @IBOutlet weak var cupofbeer: UILabel!
     @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var labelEvent: UILabel!
@@ -46,10 +47,17 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         print(result)
         
         labelEvent.text = "イベントはありません"
+        whichishungover.text = ""
+        cupofbeer.text = ""
         for ev in result {
             if ev.date == da {
                 labelEvent.text = ev.event
                 cupofbeer.text = "\(ev.beer)"
+                if ev.hungover == true{
+                    whichishungover.text = "二日酔い"
+                }else{
+                    whichishungover.text = "適正飲酒"
+                }
             }
         }
         
